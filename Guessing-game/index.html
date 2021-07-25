@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing||Game</title>
+<style>
+    div{
+        display: grid;
+        place-items: center;
+        align-items: center;
+
+        width: 100%;
+        padding: 30px;
+        max-width: 30%;
+        margin: 0 auto;
+
+        border-radius: 20px;
+        background-color: olive;
+
+
+        position: absolute;
+        transform: translate(100%,100%);
+  
+}
+input[type="text"]{
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <div>
+        <span>Guess any number from 1 to 99</span>
+    <p><input type="text" id="input" placeholder="Enter your luck number"></p>
+    <br>
+    <p id="core"></p>
+
+    <button id="btn">Place Me</button>
+</div>
+
+
+</body>
+<script src="index.js"></script>
+</html>
