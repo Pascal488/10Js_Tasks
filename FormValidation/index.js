@@ -22,7 +22,6 @@ function erroFor(){
     
         document.getElementById("email").classList.add("your-class");
         document.getElementById("email").placeholder = "Email cannot be blank";
-        return true;
 
 }
 function setSuccessFor(){
