@@ -1,76 +1,80 @@
+var emailValue = document.getElementById("email").value;
+var numberValue = document.getElementById("number").value;
+var addressValue = document.getElementById("address").value;
+var countryValue = document.getElementById("country").value;
+var cityValue = document.getElementById("city").value;
 
+var email = document.getElementById("email");
+var number = document.getElementById("number");
+var country = document.getElementById("country");
+var city = document.getElementById("city");
+var address = document.getElementById("address");
+var button = document.getElementById("btn");
 
- 
- var emailValue =  document.getElementById("email").value;
- var numberValue = document.getElementById("number").value;
- var addressValue = document.getElementById("address").value;
- var counrtyValue = document.getElementById("counrty").value;
- var cityValue = document.getElementById("city").value;
+function setErrorFor() {
+  document.getElementById("email").style.border = "2px solid #db637b";
+  document.getElementById("number").style.border = "2px solid #db637b";
+  document.getElementById("address").style.border = "2px solid #db637b";
+  document.getElementById("country").style.border = "2px solid #db637b";
+  document.getElementById("city").style.border = "2px solid #db637b";
+  document.getElementById("email").classList.add("your-class");
+  document.getElementById("number").classList.add("your-class");
+  document.getElementById("city").classList.add("your-class");
+  document.getElementById("country").classList.add("your-class");
+  document.getElementById("address").classList.add("your-class");
 
- var button = document.getElementById("btn");
- var hide = document.getElementById("material");
-
-
-function erroFor(){
-        document.getElementById("email").style.border = "2px solid red";
-         document.getElementById("number").style.border = "2px solid red";
-         document.getElementById("address").style.border = "2px solid red";
-         document.getElementById("counrty").style.border = "2px solid red";
-         document.getElementById("city").style.border = "2px solid red";
-        
-    
-    
-        document.getElementById("email").classList.add("your-class");
-        document.getElementById("email").placeholder = "Email cannot be blank";
-
+  document.getElementById("email").placeholder = "Email cannot be blank";
+  document.getElementById("number").placeholder =
+    "Phone number  cannot be blank";
+  document.getElementById("country").placeholder =
+    "Country name cannot be blank";
+  document.getElementById("address").placeholder =
+    "Address name cannot be blank";
+  document.getElementById("city").placeholder =
+    "City name cannot name be blank";
 }
-function setSuccessFor(){
-    hide.style.visibility= "hidden";
-    document.getElementById("email").style.border = "2px solid yellow";
+function setSuccessFor() {
+  borderChanger();
+}
 
+function borderChanger() {
+  email.style.border = "2px solid black";
+  number.style.border = "2px solid black";
+  city.style.border = "2px solid black";
+  country.style.border = "2px solid black";
+  address.style.border = "2px solid black";
 }
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-  });
+  checker();
+});
 
+function checker() {
+  const emailValue = email.value.trim();
+  const numberValue = number.value.trim();
+  const addressValue = address.value.trim();
+  const cityValue = city.value.trim();
+  const countryValue = country.value.trim();
+  if (emailValue == "") {
+    setErrorFor(email);
+  } else {
+    setSuccessFor(email);
+  }
 
+  if (numberValue === "") {
+    setErrorFor(number);
+  }
 
- button.onclick = function checkInputs()
- {
-  
-    if (emailValue  === "") {
-        erroFor(email);
+  if (addressValue === "") {
+    setErrorFor(address);
+  }
 
- }else{
-setSuccessFor(emailValue);
+  if (cityValue === "") {
+    setErrorFor(city);
+  }
 
- }
- 
-
- 
-}
-
-
-  
-
-  
-
-
-
-function ValidateEmail(emailValue)
-{
-var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-if(emailValue.match(mailformat))
-{
-alert("Valid email address!");
-document.form1.text1.focus();
-return true;
-}
-else
-{
-alert("You have entered an invalid email address!");
-document.form1.text1.focus();
-return false;
-}
+  if (countryValue === "") {
+    setErrorFor(country);
+  }
 }
